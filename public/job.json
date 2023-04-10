@@ -1,0 +1,23 @@
+[
+    {
+        "id":1,
+        "job":"Technical Database Engineer",
+        "company":"Google LLC",
+        "logo":"",
+        "type":"Remote",
+        "jobTime":"Full-Time",
+        "address":{
+            "location":"New York, USA",
+            "phone":1234567890,
+            "email":"email@email.com"
+            
+            },
+        "salary":"100K-150K",
+        "info":{
+            "desc":"",
+            "role":"",
+            "Education":"",
+            "experiences":""
+        }
+    }
+]
