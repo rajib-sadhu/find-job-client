@@ -2,18 +2,36 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 import './index.css';
-import { createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import Main from './components/Layout/Main';
+import Home from './components/Pages/Home';
+import AppliedJob from './components/Pages/AppliedJob';
+import Blog from './components/Pages/Blog';
+import Statistics from './components/Pages/Statistics';
 
 const router = createBrowserRouter([
 {
   path:'/',
-  element:'',
+  element:<Main/>,
   errorElement:'',
   children:[
     {
       path:'/',
-      element:""
-    }
+      element:<Home/>
+    },
+    {
+      path:'/statistics',
+      element:<Statistics/>
+    },
+    {
+      path:'/applied-jobs',
+      element:<AppliedJob/>
+    },
+    {
+      path:'/blog',
+      element:<Blog/>
+    },
+
   ]
 }
 
@@ -23,6 +41,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>,
 )
