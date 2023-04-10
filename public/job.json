@@ -2,7 +2,7 @@
     {
         "id": 1,
         "company_name": "Google",
-        "logo": "https://example.com/acme_logo.png",
+        "logo": "../src/assets/All Images/google-logo.png",
         "job_title": "Web Developer",
         "job_type": "Full-Time",
         "job_location": "San Francisco, CA",
@@ -18,7 +18,7 @@
     {
         "id": 2,
         "company_name": "Meta Platforms, Inc.",
-        "logo": "https://example.com/globex_logo.png",
+        "logo": "../src/assets/All Images/Meta-Logo.png",
         "job_title": "Digital Marketing Specialist",
         "job_type": "Remote",
         "job_location": "Anywhere",
@@ -34,7 +34,7 @@
     {
         "id": 3,
         "company_name": "Netflix",
-        "logo": "https://example.com/initech_logo.png",
+        "logo": "../src/assets/All Images/netflix-4 1.png",
         "job_title": "Software Engineer",
         "job_type": "Full-Time",
         "job_location": "Chicago, IL",
@@ -50,7 +50,7 @@
     {
         "id": 4,
         "company_name": "Airbnb",
-        "logo": "https://example.com/acme_logo.png",
+        "logo": "../src/assets/All Images/Group 10021.png",
         "job_title": "Web Developer",
         "job_type": "Full-Time",
         "job_location": "San Francisco, CA",
@@ -66,7 +66,7 @@
     {
         "id": 5,
         "company_name": "Infosys",
-        "logo": "https://example.com/globex_logo.png",
+        "logo": "../src/assets/All Images/infosys.png",
         "job_title": "Digital Marketing Specialist",
         "job_type": "Remote",
         "job_location": "Anywhere",
@@ -82,7 +82,7 @@
     {
         "id": 6,
         "company_name": "Tesla",
-        "logo": "https://example.com/initech_logo.png",
+        "logo": "../src/assets/All Images/tesla-9 1.png",
         "job_title": "Software Engineer",
         "job_type": "Full-Time",
         "job_location": "Chicago, IL",
