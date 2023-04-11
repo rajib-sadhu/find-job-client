@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <div className='flex justify-between items-center px-20 py-10'>
+        <div className='md:block hidden flex justify-between items-center md:px-20 py-10'>
             <div>
                 <Link className='font-bold text-2xl' to='/'>Find Job</Link>
             </div>
