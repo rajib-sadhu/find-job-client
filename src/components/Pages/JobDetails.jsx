@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { addToDb, getAppliedJobs } from '../../utilities/fakedb';
 
 // logos
 
@@ -8,11 +9,69 @@ import { useLocation } from 'react-router-dom';
 const JobDetails = () => {
 
     const location = useLocation();
-    const { data } = location.state;
+    const { job } = location.state;
+    const { id, company_name, job_title, job_type, work_arrangement, job_location, salary, logo, email, phone, education, experience, responsibilities, job_description } = job;
 
-    console.log(data);
 
-    const { id, company_name, job_title, job_type, work_arrangement, job_location, salary, logo, email, phone, education, experience, responsibilities, job_description } = data;
+    const [data, setData] = useState([]);
+  const [sign, setSign] = useState([]);
+
+  useEffect(()=>{
+    fetch('job.json')
+    .then(res=>res.json())
+    .then(data=>setData(data))
+  },[]);
+
+  useEffect(()=>{
+
+    const storedPlayer = getAppliedJobs();
+    const playerSign = [];
+
+    for(const id of storedPlayer){
+      const findPlayer = data.find(player=>player.id===id);
+      if(findPlayer){
+        playerSign.push(findPlayer);
+      }
+    }
+    
+    setSign(playerSign);
+
+  },[data])
+  
+
+  const handleSign = id =>{
+    
+    let newSign = [];
+    const exists = sign.find(sign_id=>sign_id.id===id);
+    // const budget = 40000000000;
+
+    if(!exists){
+      const player = data.find(player_id => player_id.id==id )
+      newSign = [...sign, player];
+
+      addToDb(id)
+
+      // if(value<=budget){
+        setSign(newSign);
+        alert(`Applied!`);
+      // }
+      // else{
+      //   toast.error(`You have last ${budget-value} budget`) 
+      // }
+    }
+    else{
+      alert(`Already Applied!`)
+    }
+  }
+
+    const handleApply =()=>{
+   
+        handleSign(id)
+        // setJobs([...jobs, [id]])
+
+        // localStorage.setItem('applied-job',jobs)
+    }
+
 
 
     return (
@@ -70,7 +129,9 @@ const JobDetails = () => {
                     </p>
                 </div>
                 <div className='mt-10'>
-                    <button className='w-full font-bold text-white bg-[#2743ff] hover:bg-[#0015a0] py-2 rounded-md'>
+                    <button className='w-full font-bold text-white bg-[#2743ff] hover:bg-[#0015a0] py-2 rounded-md'
+                    onClick={handleApply}
+                    >
                         Apply Now
                     </button>
                 </div>

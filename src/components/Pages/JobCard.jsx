@@ -27,7 +27,7 @@ const JobCard = ({ job }) => {
             </div>
             <div>
                 <Link className='bg-[#2743ff] hover:bg-[#0018b3] text-white px-3 py-2 rounded-md font-bold'
-                to={`/job-details`} state={{ data: job }}
+                to={`/job-details`} state={{ job: job }}
                 >
                     View Details
                 </Link>
