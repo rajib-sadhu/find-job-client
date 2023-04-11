@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import headerImg from '../../assets/All Images/P3OLGJ1 copy 1.png'
 import { useLoaderData } from 'react-router-dom';
 import JobCategory from './JobCategory';
@@ -6,8 +6,13 @@ import FeaturedJob from './FeaturedJob';
 
 const Home = () => {
 
-    const data = useLoaderData();
-    console.log(data)
+    const loadData = useLoaderData();
+ 
+    const [data, setData] = useState(loadData.slice(0,4));
+
+    const handleShowAllData = ()=>{
+        setData(loadData)
+    }
 
 
     return (
@@ -29,7 +34,21 @@ const Home = () => {
             </div>
             {/* applied job sections */}
             <div className='mt-16 mb-5'>
-                <FeaturedJob/>
+                <FeaturedJob data={data} />
+            </div>
+            <div className='my-10 text-center'>
+           
+           {
+            data.length<=4?
+            <button 
+            className='bg-[#2743ff] hover:bg-[#0018b3] text-white px-3 py-2 rounded-md font-bold'
+            onClick={handleShowAllData}
+            >
+                    Show All
+                </button>
+                :
+                ''
+           }
             </div>
         </div>
     );
