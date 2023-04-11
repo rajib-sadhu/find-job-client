@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './Header';
+import { Toaster } from 'react-hot-toast';
 import { Outlet } from 'react-router-dom';
 
 const Main = () => {
@@ -7,6 +8,7 @@ const Main = () => {
         <div>
             <Header/>
             <Outlet/>
+            <Toaster/>
         </div>
     );
 };

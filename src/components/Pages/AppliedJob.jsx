@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const AppliedJob = () => {
+
+    useEffect(()=>{
+
+    },[])
+
+
     return (
         <div>
-            Applied Jobs
+            
         </div>
     );
 };
