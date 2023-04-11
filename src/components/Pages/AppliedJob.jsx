@@ -8,8 +8,8 @@ import locationIcon from '../../assets/Icons/Frame-4.png';
 const AppliedJob = () => {
 
     const data = useLoaderData();
-
     const [jobs, setJobs] = useState([]);
+    const [filterValue, setFilterValue] = useState('')
 
 
     useEffect(() => {
@@ -32,13 +32,25 @@ const AppliedJob = () => {
     }
 
 
+    const handleFilter = (event)=>{
+        const value = event.target.value;
+        setFilterValue(value);
+        if(value==='remote'){
+            const filterJob = jobs;
+        }
+    }
+
+    console.log(filterValue)
 
     return (
         <div className='px-52 mt-20'>
             <div className='text-right'>
-                <select name="" id="">
-                    <option value="">Remote</option>
-                    <option value="">On-Site</option>
+                <select className='bg-slate-300 px-2 py-1 rounded-sm' 
+                value={filterValue}
+                onChange={handleFilter}
+                >
+                    <option value="remote">Remote</option>
+                    <option value="on_site">On-Site</option>
                 </select>
             </div>
             <div className='mt-10 space-y-5'>
