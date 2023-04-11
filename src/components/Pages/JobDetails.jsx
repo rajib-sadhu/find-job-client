@@ -16,7 +16,7 @@ const JobDetails = () => {
 
 
     return (
-        <div>
+        <div className='my-5'>
 
             <div className='w-full flex flex-col items-center space-y-3 '>
                 <img src={logo} className='md:w-48 w-28 md:h-20 object-contain' alt="" />
