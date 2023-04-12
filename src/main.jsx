@@ -10,6 +10,7 @@ import Blog from './components/Pages/Blog';
 import Statistics from './components/Pages/Statistics';
 import JobDetails from './components/Pages/JobDetails';
 import ErrorPage from './components/Layout/ErrorPage';
+import FilteredData from './components/Pages/Test';
 
 const router = createBrowserRouter([
 {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
     },
 
   ]
+},
+{
+  path:'/test',
+  element:<FilteredData></FilteredData>
 }
 
 ])

@@ -1,5 +1,8 @@
 import React from 'react';
-import accountImage from '../../assets/Icons/accounts 1.png'
+import accountImage from '../../assets/Icons/accounts 1.png';
+import businessImage from '../../assets/Icons/business 1.png';
+import socialImage from '../../assets/Icons/social-media 1.png';
+import chipImage from '../../assets/Icons/chip 1.png';
 
 const CategoryCard = () => {
     return (
@@ -11,17 +14,17 @@ const CategoryCard = () => {
             </div>
             
             <div className='px-10 py-8 bg-slate-100  space-y-2'>
-                <img src={accountImage} alt="" className='p-3 rounded-md bg-slate-200' />
+                <img src={businessImage} alt="" className='p-3 rounded-md bg-slate-200' />
                 <h1 className='text-2xl font-semibold'>Creative Design</h1>
                 <p className='text-lg text-slate-400'>100+ Jobs Available</p>
             </div>
             <div className='px-10 py-8 bg-slate-100  space-y-2'>
-                <img src={accountImage} alt="" className='p-3 rounded-md bg-slate-200' />
+                <img src={socialImage} alt="" className='p-3 rounded-md bg-slate-200' />
                 <h1 className='text-2xl font-semibold'>Marketing & Sales</h1>
                 <p className='text-lg text-slate-400'>150 Jobs Available</p>
             </div>
             <div className='px-10 py-8 bg-slate-100  space-y-2'>
-                <img src={accountImage} alt="" className='p-3 rounded-md bg-slate-200' />
+                <img src={chipImage} alt="" className='p-3 rounded-md bg-slate-200' />
                 <h1 className='text-2xl font-semibold'>Engineering Job</h1>
                 <p className='text-lg text-slate-400'>200+ Jobs Available</p>
             </div>

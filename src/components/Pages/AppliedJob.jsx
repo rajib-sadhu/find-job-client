@@ -25,37 +25,33 @@ const AppliedJob = () => {
         setJobs(newJob);
 
     }, [])
-    // console.log(jobs);
 
-    if(jobs.length==0){
-        return <p className='font-semibold text-lg mt-10 text-center'>No Applied Jobs!!</p>
-    }
 
 
     const handleFilter = (event)=>{
         const value = event.target.value;
         setFilterValue(value);
-        if(value==='remote'){
-            const filterJob = jobs;
-        }
     }
 
-    console.log(filterValue)
+    const filteredData = filterValue
+    ? jobs.filter((job) => job.work_arrangement === filterValue)
+    : jobs;
 
     return (
-        <div className='px-52 mt-20'>
+        <div className='px-52 my-20'>
             <div className='text-right'>
                 <select className='bg-slate-300 px-2 py-1 rounded-sm' 
                 value={filterValue}
                 onChange={handleFilter}
                 >
-                    <option value="remote">Remote</option>
-                    <option value="on_site">On-Site</option>
+                    <option value="">----</option>
+                    <option value="Remote">Remote</option>
+                    <option value="On-Site">On-Site</option>
                 </select>
             </div>
             <div className='mt-10 space-y-5'>
             {
-                    jobs.map(job => <AppliedJobCard key={job.id} job={job} /> )
+                    filteredData.map(job => <AppliedJobCard key={job.id} job={job} /> )
                 }
             </div>
         </div>
@@ -64,7 +60,7 @@ const AppliedJob = () => {
 
 const AppliedJobCard = ({ job }) => {
    
-    const { id, company_name, job_title, job_type, work_arrangement, job_location, salary, logo, } = job;
+    const { id, company_name, job_title, job_type, work_arrangement, job_location, salary, logo } = job;
 
     return (
         <div className='flex gap-5 border-2 p-8 rounded-md'>
