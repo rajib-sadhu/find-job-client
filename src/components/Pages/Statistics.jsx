@@ -40,7 +40,8 @@ const Statistics = () => {
     ]
 
     return (
-        <div className='w-full mt-10 flex justify-center'>
+        <div className='w-full mt-10 flex justify-center flex-col items-center'>
+            <h1 className='my-8 text-3xl font-bold'>Assignments Marks</h1>
             <div className=''>
                 <LineChart
 
